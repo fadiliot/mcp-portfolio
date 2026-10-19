@@ -1,0 +1,584 @@
+{
+  "personal": {
+    "name": "Fadil Anwar",
+    "handle": "fadil",
+    "title": "Applied AI & Software Engineer",
+    "subtitle": "Applied AI · Distributed Backend Systems · Generative AI & RAG · Multi-Agent Systems",
+    "email": "fadilanwar727@gmail.com",
+    "phone": "+91 8111860730",
+    "location": "Chennai, India",
+    "headline": "Applied AI and software engineer building production-oriented AI products across distributed backend systems, invoice automation, sales workflow automation, multi-agent LLM evaluation, evidence-grounded RAG, computer vision, geospatial intelligence, and forecasting.",
+    "status": "Open to Applied AI, ML Engineering, and Generative AI opportunities",
+    "social": {
+      "github": "https://github.com/fadiliot",
+      "linkedin": "https://linkedin.com/in/fadilanwar",
+      "paper": "https://arxiv.org/html/2512.19016v2#S2.E3",
+      "email": "mailto:fadilanwar727@gmail.com"
+    }
+  },
+  "headline_metrics": [
+    {
+      "label": "Automated Adversarial Tests",
+      "value": "5,000+",
+      "description": "LLM test executions triaged by the multi-agent red-team evaluation harness"
+    },
+    {
+      "label": "Distinct Failure Categories",
+      "value": "120+",
+      "description": "Failure categories identified without human labeling in the red-team project"
+    },
+    {
+      "label": "GPU Compute Overhead",
+      "value": "~83% lower",
+      "description": "Reduction achieved in the AGRIIQ vehicle-tracking pipeline through trajectory subsampling"
+    },
+    {
+      "label": "Forecast Prediction Coverage",
+      "value": "100%",
+      "description": "Achieved with a four-tier fallback mechanism for agricultural commodity forecasts"
+    },
+    {
+      "label": "Invoice Processing Throughput",
+      "value": "10,000+ / day",
+      "description": "Documents handled by the distributed asynchronous invoice-processing system"
+    },
+    {
+      "label": "Manual Red-Team Effort",
+      "value": "~65% lower",
+      "description": "Reduction attributed to automated adversarial test generation, execution, and reporting"
+    }
+  ],
+  "current_focus": {
+    "role": "AI Intern at Dexian India; prior AI internship at Efforts IT Solutions Ltd; applied AI and software systems projects",
+    "system": "Applied AI spanning real-time computer vision, aerial drone intelligence, agricultural commodity forecasting, RAG, and multi-agent LLM evaluation",
+    "publication": "Autonomous Multi-Agent Red Team Testing Service — arXiv:2512.19016",
+    "stack": [
+      "Python",
+      "PyTorch",
+      "YOLO11",
+      "ByteTrack",
+      "EfficientNet",
+      "DeepForest AI",
+      "Rasterio",
+      "PyODM",
+      "LightGBM",
+      "LangGraph",
+      "FAISS",
+      "FastAPI",
+      "Docker",
+      "React",
+      "PostgreSQL",
+      "Redis",
+      "RQ",
+      "REST APIs",
+      "Microservices",
+      "Distributed Systems",
+      "AWS EC2",
+      "AWS S3",
+      "AWS Lambda",
+      "AWS SQS",
+      "CloudWatch",
+      "Linux",
+      "CI/CD"
+    ]
+  },
+  "experience": [
+    {
+      "role": "AI Intern",
+      "organization": "Dexian India",
+      "period": "Jun 2026 - Present",
+      "location": "Chennai, India",
+      "type": "Internship",
+      "summary": "Builds applied AI systems for real-time vehicle tracking, aerial drone intelligence, and agricultural commodity forecasting.",
+      "achievements": [
+        "Architected AGRIIQ, an end-to-end vehicle gateway system combining a two-stage YOLO11 + ByteTrack pipeline with a PyTorch EfficientNet vision pipeline; reduced GPU compute overhead by approximately 83% through trajectory subsampling while maintaining real-time tracking.",
+        "Developed an aerial drone intelligence pipeline using PyTorch, DeepForest AI, and Rasterio for automated tree-crown segmentation, with PyODM orthomosaic stitching.",
+        "Trained LightGBM time-series regression models for four-week agricultural commodity price forecasts with median and percentile confidence intervals; built a four-tier fallback mechanism to provide 100% prediction coverage."
+      ],
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "YOLO11",
+        "ByteTrack",
+        "EfficientNet",
+        "DeepForest AI",
+        "Rasterio",
+        "PyODM",
+        "LightGBM"
+      ]
+    },
+    {
+      "role": "AI Intern",
+      "organization": "Efforts IT Solutions Ltd",
+      "period": "Jan 2026 - May 2026",
+      "location": "Abu Dhabi, UAE",
+      "type": "Internship",
+      "summary": "Built AI-enabled workflow products and distributed backend services, spanning invoice processing and sales automation.",
+      "achievements": [
+        "Designed a fault-tolerant, distributed invoice-processing system handling 10,000+ documents per day using asynchronous workers, Redis-backed queues, and horizontal scaling.",
+        "Designed and built a full-stack AI-powered sales automation platform integrating REST APIs across Zoho CRM, Microsoft Outlook, and Google Calendar to automate scheduling and client-management workflows.",
+        "Containerized Python enterprise backend services with Docker and integrated LLM-based components through production-oriented APIs to improve deployment repeatability and service reliability."
+      ],
+      "tech_stack": [
+        "Python",
+        "FastAPI",
+        "REST APIs",
+        "Redis",
+        "RQ",
+        "PostgreSQL",
+        "React",
+        "Docker",
+        "LLM APIs",
+        "Zoho CRM",
+        "Microsoft Outlook",
+        "Google Calendar",
+        "QuickBooks"
+      ]
+    },
+    {
+      "role": "Data Science Intern",
+      "organization": "Emirates",
+      "period": "Dec 2023 - Jan 2024",
+      "location": "Dubai, UAE",
+      "type": "Internship",
+      "summary": "Built data workflows and NLP classification capabilities with the data science team.",
+      "achievements": [
+        "Built and deployed data workflows in Dataiku, integrating Python scripts to cluster frequent-flyer data.",
+        "Built a custom RoBERTa-based classifier that achieved an F1 score of 92.3.",
+        "Collaborated with senior data scientists to analyze outputs, prepare reports, and communicate findings for stakeholder review."
+      ],
+      "tech_stack": [
+        "Python",
+        "Dataiku",
+        "RoBERTa",
+        "NLP",
+        "Clustering"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "dream-redteam",
+      "name": "Autonomous Multi-Agent Red Team Testing Service (DREAM)",
+      "tagline": "Multi-agent framework for automated adversarial testing and LLM failure analysis",
+      "paper": "arXiv:2512.19016",
+      "github": "https://github.com/fadiliot/Autonomous-Red-Team-Testing-Service",
+      "highlights": [
+        "Designed a multi-agent architecture with planner, attacker, evaluator, and target roles to generate, execute, and investigate adversarial test cases against LLM systems.",
+        "Built an evaluation harness that triaged more than 5,000 automated test executions into 120+ distinct failure categories without human labeling.",
+        "Achieved approximately 42% coverage of known failure taxonomies in project evaluation.",
+        "The broader research design includes contextualized guided policy search, FAISS-based retrieval, and cross-environment adversarial knowledge-graph concepts."
+      ],
+      "metrics": "5,000+ automated test executions · 120+ failure categories · ~42% failure-taxonomy coverage",
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "OpenAI GPT-4",
+        "LangGraph",
+        "FAISS",
+        "FastAPI"
+      ]
+    },
+    {
+      "id": "pharmagene-rag",
+      "name": "PharmaGene-RAG: Pharmacogenomic Decision Support",
+      "tagline": "Evidence-grounded RAG designed to reduce unsupported medical explanations",
+      "highlights": [
+        "Co-authored and defended a research project focused on mitigating LLM hallucinations in medicine.",
+        "Built a hybrid RAG system combining knowledge graphs, vector search, and metadata filtering; reported approximately 70% improvement in evidence-grounded explanation accuracy.",
+        "Implemented retrieval grounding and citation enforcement, reducing unsupported clinical claims by approximately 60% versus baseline models.",
+        "Designed a local deployable inference pipeline with under 3.5-second end-to-end latency."
+      ],
+      "metrics": "~70% improvement in evidence-grounded explanation accuracy · ~60% fewer unsupported clinical claims · <3.5s latency",
+      "tech_stack": [
+        "Knowledge Graphs",
+        "FAISS",
+        "Chroma",
+        "Sentence-Transformers",
+        "Local LLMs",
+        "RAG"
+      ]
+    },
+    {
+      "id": "legacy-code-migration",
+      "name": "Automated Legacy Code Migration Agent",
+      "tagline": "Multi-agent code migration with automated semantic-equivalence verification",
+      "highlights": [
+        "Designed a planner, migrator, and verifier pipeline to translate legacy code into a modern equivalent.",
+        "Used static analysis to locate migration targets and automated test execution to verify semantic equivalence.",
+        "Migrated 78% of a 340-file Python 2-to-3 codebase with zero test regressions across a 1,200-test suite."
+      ],
+      "metrics": "78% of a 340-file codebase migrated · zero regressions across 1,200 tests",
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "LibROSA",
+        "Static Analysis",
+        "Automated Testing",
+        "Multi-Agent Systems"
+      ]
+    },
+    {
+      "id": "agriiQ-vehicle-gateway",
+      "name": "AGRIIQ: Real-Time AI Vehicle Gateway",
+      "tagline": "Two-stage detection and tracking with an efficient vision pipeline",
+      "highlights": [
+        "Combined YOLO11 and ByteTrack with a PyTorch EfficientNet vision pipeline for real-time vehicle tracking.",
+        "Reduced GPU compute overhead by approximately 83% through trajectory subsampling."
+      ],
+      "metrics": "~83% lower GPU compute overhead",
+      "tech_stack": [
+        "YOLO11",
+        "ByteTrack",
+        "PyTorch",
+        "EfficientNet",
+        "Computer Vision"
+      ]
+    },
+    {
+      "id": "drone-tree-intelligence",
+      "name": "Aerial Drone Tree-Crown Intelligence",
+      "tagline": "Geospatial AI pipeline for automated tree-crown segmentation and orthomosaic generation",
+      "highlights": [
+        "Developed an aerial drone imagery pipeline for automated tree-crown segmentation.",
+        "Integrated PyTorch, DeepForest AI, Rasterio, and PyODM orthomosaic stitching."
+      ],
+      "tech_stack": [
+        "PyTorch",
+        "DeepForest AI",
+        "Rasterio",
+        "PyODM",
+        "Geospatial AI",
+        "Computer Vision"
+      ]
+    },
+    {
+      "id": "agri-price-forecasting",
+      "name": "Agricultural Commodity Price Forecasting",
+      "tagline": "Four-week time-series forecasts with confidence intervals and resilient fallbacks",
+      "highlights": [
+        "Trained LightGBM time-series regression models for four-week agricultural commodity price forecasts.",
+        "Produced median and percentile confidence intervals and engineered a four-tier fallback mechanism for 100% prediction coverage."
+      ],
+      "metrics": "Four-week forecast horizon · 100% prediction coverage with fallback tiers",
+      "tech_stack": [
+        "Python",
+        "LightGBM",
+        "Time-Series Regression",
+        "Forecasting",
+        "Uncertainty Intervals"
+      ]
+    },
+    {
+      "id": "invoice-ai",
+      "name": "Invoice_AI: Distributed Invoice Processing & Accounting Integration",
+      "tagline": "Built asynchronous invoice automation pipeline with OCR, AI validation, and QuickBooks integration",
+      "status": "Built",
+      "highlights": [
+        "Built a production-oriented invoice automation system using FastAPI, React, PostgreSQL, and Redis, with asynchronous RQ workers decoupling API ingestion from OCR and other compute-intensive processing.",
+        "Designed a distributed processing architecture supporting approximately 10,000 invoices per day and sub-second API response times for ingestion.",
+        "Implemented OCR and rule-based parsing with a Gemini parsing fallback when extraction confidence falls below 0.85.",
+        "Integrated QuickBooks through its REST API and defined operational API flows for uploads, invoice listing, dashboard statistics, and retrying failed jobs.",
+        "Containerized services with Docker and environment-based configuration to support repeatable deployment."
+      ],
+      "tech_stack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "PostgreSQL",
+        "Redis",
+        "RQ",
+        "Tesseract OCR",
+        "Gemini API",
+        "QuickBooks REST API",
+        "Docker"
+      ],
+      "metrics": "10,000+ invoices/day · sub-second API response times · asynchronous Redis/RQ processing",
+      "organization": "Efforts IT Solutions Ltd internship project"
+    },
+    {
+      "id": "ce-akg-graph",
+      "name": "Cross-Environment Adversarial Knowledge Graph (CE-AKG)",
+      "tagline": "Belief-state tracking and relationship mapping for multi-step adversarial scenarios",
+      "paper": "arXiv:2512.19016 §2.3",
+      "highlights": [
+        "Models the evolving context of adversarial interactions across disconnected digital environments.",
+        "Uses recursive information fusion to represent entities, credentials, tokens, and potential pivot pathways.",
+        "Includes an interactive force-directed graph visualization concept for inspecting relationships and clusters."
+      ],
+      "tech_stack": [
+        "Python",
+        "NetworkX",
+        "Knowledge Graphs",
+        "Vector Embeddings",
+        "HTML5 Canvas"
+      ]
+    },
+    {
+      "id": "mcp-portfolio-server",
+      "name": "Model Context Protocol (MCP) Live Profile Server",
+      "tagline": "AI-agent-queryable profile and portfolio service",
+      "highlights": [
+        "Profile design describes JSON-RPC 2.0 and server-sent events (SSE) endpoints for AI-agent integrations.",
+        "Includes concepts for candidate screening, skill verification, and rubric-based job-fit evaluation.",
+        "Includes a protocol-inspection interface for viewing payloads and latency diagnostics."
+      ],
+      "tech_stack": [
+        "FastAPI",
+        "Python",
+        "JSON-RPC 2.0",
+        "SSE",
+        "API Observability"
+      ]
+    },
+    {
+      "id": "sales-coworker",
+      "name": "AI-Powered Sales Co-worker & Workflow Automation",
+      "tagline": "Full-stack sales assistant for CRM, email, calendar, and client-management workflows",
+      "highlights": [
+        "Designed and built a full-stack AI-powered sales automation platform using backend services and REST API integrations.",
+        "Integrated workflows across Zoho CRM, Microsoft Outlook, and Google Calendar to automate scheduling and client management and reduce manual workflow overhead.",
+        "The broader Sales Co-worker project context also explored Zoho Books and Yeastar PBX integrations; these are kept as integration scope rather than claimed as completed integrations."
+      ],
+      "tech_stack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "REST APIs",
+        "Docker",
+        "LLM APIs",
+        "Zoho CRM",
+        "Microsoft Outlook",
+        "Google Calendar"
+      ],
+      "status": "Built"
+    }
+  ],
+  "skills": {
+    "Programming Languages": [
+      {
+        "name": "Python",
+        "evidence": "Used across computer vision, forecasting, NLP/RAG, data workflows, and agentic systems."
+      },
+      {
+        "name": "Java, C++, JavaScript/TypeScript",
+        "evidence": "Additional languages from the broader development toolkit."
+      }
+    ],
+    "AI & Agentic Systems": [
+      {
+        "name": "Multi-Agent Systems",
+        "evidence": "Planner, attacker, evaluator, and target roles in the autonomous red-team project; planner, migrator, and verifier roles in the code-migration agent."
+      },
+      {
+        "name": "LangGraph",
+        "evidence": "Used in the autonomous multi-agent red-team testing project."
+      },
+      {
+        "name": "LLM Evaluation & Adversarial Testing",
+        "evidence": "5,000+ automated test executions grouped into 120+ failure categories."
+      },
+      {
+        "name": "Prompt Engineering and Evaluation",
+        "evidence": "Part of the broader LLM testing and applied generative AI toolkit."
+      }
+    ],
+    "Generative AI, RAG & NLP": [
+      {
+        "name": "Retrieval-Augmented Generation (RAG)",
+        "evidence": "PharmaGene-RAG combines knowledge graphs, vector search, metadata filtering, retrieval grounding, and citations."
+      },
+      {
+        "name": "Knowledge Graphs",
+        "evidence": "Used in pharmacogenomic decision support and adversarial knowledge-graph concepts."
+      },
+      {
+        "name": "FAISS and Chroma",
+        "evidence": "Vector retrieval in the PharmaGene-RAG project and FAISS use in the red-team project."
+      },
+      {
+        "name": "Sentence-Transformers and Local LLMs",
+        "evidence": "Included in the PharmaGene-RAG technology stack."
+      },
+      {
+        "name": "NLP and RoBERTa",
+        "evidence": "Built a custom RoBERTa-based classifier at Emirates with an F1 score of 92.3."
+      }
+    ],
+    "Machine Learning & Computer Vision": [
+      {
+        "name": "PyTorch",
+        "evidence": "Used in computer vision pipelines, the red-team project, and the legacy migration agent."
+      },
+      {
+        "name": "YOLO11 and ByteTrack",
+        "evidence": "Used together in the AGRIIQ vehicle-tracking pipeline."
+      },
+      {
+        "name": "EfficientNet",
+        "evidence": "Used in the AGRIIQ vision pipeline."
+      },
+      {
+        "name": "DeepForest AI, Rasterio, and PyODM",
+        "evidence": "Used for drone tree-crown segmentation and orthomosaic stitching."
+      },
+      {
+        "name": "LightGBM and Time-Series Forecasting",
+        "evidence": "Used for four-week agricultural commodity price forecasts with confidence intervals."
+      },
+      {
+        "name": "XGBoost, OpenCV, TensorFlow Lite",
+        "evidence": "Additional tools listed in the resume skills section."
+      }
+    ],
+    "Data, Backend & Infrastructure": [
+      {
+        "name": "Dataiku",
+        "evidence": "Built and deployed data workflows at Emirates."
+      },
+      {
+        "name": "FastAPI",
+        "evidence": "Used in the autonomous red-team testing project and broader backend development."
+      },
+      {
+        "name": "Docker, Kubernetes, AWS, Azure, Git",
+        "evidence": "Cloud and DevOps tools listed in the resume."
+      },
+      {
+        "name": "PostgreSQL, MongoDB, Redis/RQ",
+        "evidence": "Additional backend and data infrastructure tools explored in application projects."
+      },
+      {
+        "name": "SQL and REST APIs",
+        "evidence": "Part of the broader backend and data engineering toolkit."
+      },
+      {
+        "name": "Redis, RQ, and asynchronous job queues",
+        "evidence": "Used in the Invoice_AI background invoice-processing pipeline."
+      },
+      {
+        "name": "OCR and confidence-based extraction",
+        "evidence": "Invoice_AI combines Tesseract OCR, rule parsing, and a confidence-triggered Gemini fallback."
+      }
+    ],
+    "Frontend & Product Engineering": [
+      {
+        "name": "React, JavaScript/TypeScript, Tailwind CSS",
+        "evidence": "Used or explored in dashboard and SaaS application development."
+      },
+      {
+        "name": "Interactive Data Visualization",
+        "evidence": "Profile projects include graph visualizations and observability dashboards."
+      }
+    ],
+    "Systems Engineering & Distributed Backend": [
+      {
+        "name": "Distributed Systems and Microservices",
+        "evidence": "Designed a fault-tolerant invoice-processing architecture using asynchronous workers, queues, and horizontal scaling."
+      },
+      {
+        "name": "Asynchronous Processing: Redis and RQ",
+        "evidence": "Used Redis-backed RQ workers to decouple invoice API ingestion from OCR and compute-intensive processing."
+      },
+      {
+        "name": "REST API Integration",
+        "evidence": "Worked with QuickBooks and designed sales workflow integrations across Zoho CRM, Microsoft Outlook, and Google Calendar."
+      },
+      {
+        "name": "Linux and Bash/Shell Scripting",
+        "evidence": "Listed in the software engineering resume skills."
+      },
+      {
+        "name": "CI/CD and Docker",
+        "evidence": "Containerized backend services and listed CI/CD and Docker among engineering skills."
+      },
+      {
+        "name": "Systems Design and Distributed Computing",
+        "evidence": "Coursework listed in the resume: Introduction to Systems Design and Distributed Computing (Coursera)."
+      }
+    ],
+    "Cloud & Developer Tools": [
+      {
+        "name": "AWS: EC2, S3, Lambda, SQS, CloudWatch",
+        "evidence": "Services explicitly listed in the resume skills section."
+      },
+      {
+        "name": "Docker, Linux, Git, and CI/CD",
+        "evidence": "Deployment and developer tooling listed in the resume; Docker was used to containerize services."
+      },
+      {
+        "name": "Flask, SQL, and Bash/Shell Scripting",
+        "evidence": "Listed in the resume systems and backend skills."
+      },
+      {
+        "name": "Postman and GitHub",
+        "evidence": "Listed in the resume tools and platforms section."
+      }
+    ]
+  },
+  "target_roles": [
+    "Applied AI Engineer",
+    "Machine Learning Engineer",
+    "Generative AI / RAG Engineer",
+    "AI Engineer - Multi-Agent Systems and LLM Evaluation",
+    "Computer Vision / Geospatial AI Engineer",
+    "Data Scientist / ML Engineer",
+    "Software Engineer (AI-Enabled Products)",
+    "Backend / Platform Engineer",
+    "Distributed Systems Engineer"
+  ],
+  "work_preferences": {
+    "locations": [
+      "Chennai, India",
+      "Dubai / UAE",
+      "Singapore",
+      "India",
+      "Remote Worldwide",
+      "Hybrid"
+    ],
+    "employment_types": [
+      "Full-Time",
+      "Graduate Roles",
+      "Internship"
+    ],
+    "interests": [
+      "Applied AI for high-impact industry problems",
+      "Agentic Systems and LLM Evaluation",
+      "Generative AI and Evidence-Grounded RAG",
+      "Computer Vision and Geospatial AI",
+      "Machine Learning and Time-Series Forecasting",
+      "End-to-End AI Product Engineering"
+    ]
+  },
+  "education": [
+    {
+      "institution": "SRM Institute of Science and Technology",
+      "degree": "B.Tech, Computer Science and Engineering",
+      "location": "Chennai, India",
+      "period": "2022 - 2026"
+    }
+  ],
+  "awards": [
+    {
+      "name": "1st Place - CINTEL Digithon Hackathon",
+      "description": "Designed a drug-compatibility prediction AI system."
+    },
+    {
+      "name": "Kaggle Data Science Recognition",
+      "description": "Top 20% leaderboard position in an AI-vs-human text-classification competition."
+    }
+  ],
+  "courses": [
+    "Introduction to Deep Learning with PyTorch - Udacity",
+    "AWS Academy Graduate - Machine Learning Foundations (Feb 2024)",
+    "AWS Certified Cloud Practitioner Foundations (Feb 2024)",
+    "Introduction to Systems Design and Distributed Computing - Coursera"
+  ],
+  "about": "Fadil Anwar is a Computer Science and Engineering graduate from SRM Institute of Science and Technology with applied AI internship experience at Emirates, Efforts IT Solutions Ltd, and Dexian India. His work spans distributed invoice automation, AI-powered sales workflow automation, multi-agent LLM evaluation, evidence-grounded RAG, real-time computer vision, drone-based geospatial intelligence, and agricultural commodity forecasting. He is interested in building practical AI and software systems with measurable outcomes, robust backend architecture, and clear industry value.",
+  "activities": [
+    {
+      "name": "CTF Participation",
+      "description": "Participated in capture-the-flag activities focused on malware analysis and AI-based cybersecurity."
+    }
+  ]
+}

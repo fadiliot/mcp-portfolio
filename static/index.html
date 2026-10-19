@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fadil Anwar | AI Security & Red Team Systems Engineer (MCP Server Portfolio)</title>
+  <meta name="description" content="Fadil Anwar is an AI Security & Red Team Systems Engineer. His portfolio is a live Model Context Protocol (MCP) server. Plug in Claude, Cursor, ChatGPT, or your agent and query his work.">
+  
+  <!-- Preconnect and Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="top-navbar">
+    <div class="container">
+      <a href="#hero" class="brand" id="brand-link">
+        <span class="brand-icon">⚡</span>
+        <span>FADIL</span>
+        <span class="brand-tag">/mcp</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#use-cases" id="nav-use-cases">USE CASES</a></li>
+          <li><a href="#live-console" id="nav-live-console">LIVE CONSOLE</a></li>
+          <li><a href="#connect" id="nav-connect">CONNECT</a></li>
+          <li><a href="#about" id="nav-about">ABOUT</a></li>
+        </ul>
+      </nav>
+
+      <div class="status-badge" id="nav-status-badge">
+        <span class="status-dot"></span>
+        <span class="status-badge-text">ONLINE 18MS</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Hero Info -->
+          <div class="hero-content">
+            <div class="hero-tagline" id="hero-tagline">
+              FADIL ANWAR · AI SECURITY & RED TEAM SYSTEMS ENGINEER
+            </div>
+            
+            <h1 class="hero-title" id="hero-headline">
+              Don't read my portfolio.
+              <span class="glow-text">Query it.</span>
+            </h1>
+
+            <p class="hero-desc" id="hero-description">
+              My portfolio is a live Model Context Protocol (MCP) server. Plug in your agent or LLM client and ask it about my research, systems, and benchmarks.
+            </p>
+
+            <!-- Live Endpoint Bar -->
+            <div class="endpoint-bar" id="hero-endpoint-bar">
+              <div class="endpoint-badge">
+                <span class="status-dot"></span>
+                <span>ONLINE</span>
+                <span class="live-latency-val" id="hero-latency">18ms</span>
+              </div>
+              <div class="endpoint-url endpoint-url-text" id="hero-endpoint-url">
+                http://localhost:8000/mcp
+              </div>
+              <button class="btn-copy" id="hero-copy-btn" onclick="copyEndpointUrl()">
+                <span>📋</span>
+                <span>COPY URL</span>
+              </button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+              <a href="#connect" class="btn-primary" id="btn-hero-connect">
+                <span>CONNECT YOUR AGENT</span>
+                <span>→</span>
+              </a>
+              <a href="#use-cases" class="btn-secondary" id="btn-hero-action">
+                <span>SEE IT IN ACTION</span>
+                <span>↓</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Hero Terminal Preview -->
+          <div class="hero-terminal-card" id="hero-terminal-preview">
+            <div class="terminal-header-line">
+              <div class="terminal-tool-name">
+                <span>› tools/call</span>
+                <strong>get_profile</strong>
+              </div>
+              <div class="terminal-latency live-latency-val">24ms</div>
+            </div>
+
+            <pre class="hero-json-preview"><code>{
+  <span class="json-key">"name"</span>: <span class="json-str">"Fadil Anwar"</span>,
+  <span class="json-key">"role"</span>: <span class="json-str">"AI Security & Red Team Systems Engineer"</span>,
+  <span class="json-key">"focus"</span>: <span class="json-str">"Autonomous Multi-Agent Red Teaming"</span>,
+  <span class="json-key">"publication"</span>: <span class="json-str">"arXiv:2512.19016 (DREAM Framework)"</span>,
+  <span class="json-key">"empirical_scale"</span>: <span class="json-str">"5,000+ interactions · 120+ flaws"</span>,
+  <span class="json-key">"stack"</span>: [<span class="json-str">"LangGraph"</span>, <span class="json-str">"PyTorch"</span>, <span class="json-str">"FAISS"</span>, <span class="json-str">"FastAPI"</span>],
+  <span class="json-key">"status"</span>: <span class="json-val">"Available for high-impact roles"</span>
+}</code></pre>
+
+            <div class="terminal-footer-label">
+              HOW YOUR AGENT SEES ME
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 01: USE CASES -->
+    <section class="section-wrapper" id="use-cases">
+      <div class="container">
+        <div class="section-label">01. USE CASES</div>
+        <h2 class="section-heading">What your agent can do with it.</h2>
+        <p class="section-subheading">Pick a scenario. The tool calls are real.</p>
+
+        <div class="use-cases-grid">
+          
+          <!-- Scenario Picker (Left) -->
+          <div class="scenario-list" id="scenario-selector">
+            <div class="scenario-btn active" data-scenario="recruiter" onclick="initScenarioPlayer('recruiter')">
+              <div class="scenario-role">RECRUITER</div>
+              <div class="scenario-desc">Screen against an AI / Security job description</div>
+            </div>
+
+            <div class="scenario-btn" data-scenario="hiring_manager" onclick="initScenarioPlayer('hiring_manager')">
+              <div class="scenario-role">HIRING MANAGER</div>
+              <div class="scenario-desc">Verify production & research claims</div>
+            </div>
+
+            <div class="scenario-btn" data-scenario="founder" onclick="initScenarioPlayer('founder')">
+              <div class="scenario-role">FOUNDER / CTO</div>
+              <div class="scenario-desc">Find an agentic builder and reach out</div>
+            </div>
+
+            <div class="scenario-btn" data-scenario="interviewer" onclick="initScenarioPlayer('interviewer')">
+              <div class="scenario-role">INTERVIEWER</div>
+              <div class="scenario-desc">Brief me before the technical interview</div>
+            </div>
+          </div>
+
+          <!-- Interactive Agent Workspace (Right) -->
+          <div class="agent-workspace" id="scenario-workspace">
+            <div class="workspace-topbar">
+              <div class="agent-connect-status">
+                <span class="status-dot"></span>
+                <span>YOUR AGENT · CONNECTED TO <strong>fadil</strong></span>
+              </div>
+              <button class="btn-replay" onclick="replayCurrentScenario()">
+                <span>⟳</span>
+                <span>Replay</span>
+              </button>
+            </div>
+
+            <div class="workspace-body">
+              <!-- Prompt bubble -->
+              <div class="prompt-bubble">
+                <span class="prompt-badge" id="scenario-prompt-badge">PROMPT · JOB_FIT</span>
+                <div class="prompt-content" id="scenario-prompt-text">
+                  Loading scenario prompt...
+                </div>
+              </div>
+
+              <!-- Tool Calls Accordion Container -->
+              <div class="tool-calls-container" id="scenario-tool-calls">
+                <!-- Dynamically populated by app.js -->
+              </div>
+
+              <!-- Agent Synthesized Evaluation Matrix -->
+              <div class="agent-matrix-wrapper">
+                <div class="matrix-header-title">AGENT SYNTHESIS & FIT BREAKDOWN</div>
+                <table class="evidence-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 32%;">REQUIREMENT</th>
+                      <th style="width: 52%;">EVIDENCE</th>
+                      <th style="width: 16%;">FIT</th>
+                    </tr>
+                  </thead>
+                  <tbody id="scenario-evidence-tbody">
+                    <!-- Dynamically populated by app.js -->
+                  </tbody>
+                </table>
+
+                <div class="agent-synthesis-note" id="scenario-synthesis-note">
+                  Synthesis loading...
+                </div>
+              </div>
+            </div>
+
+            <div class="workspace-footer-hint">
+              Tool calls are live: expand one for the real response. Agent replies are synthesized.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 02: LIVE CONSOLE -->
+    <section class="section-wrapper" id="live-console">
+      <div class="container">
+        <div class="section-label">02. LIVE CONSOLE</div>
+        <h2 class="section-heading">Watch the protocol.</h2>
+        <p class="section-subheading">Your browser connected when this page loaded. Run a tool and see the raw traffic.</p>
+
+        <div class="console-grid">
+          
+          <!-- Tool Cards List (Left) -->
+          <div class="tool-cards-list">
+            
+            <div class="tool-card">
+              <div class="tool-card-top">
+                <div class="tool-card-title-group">
+                  <span class="tool-card-name">get_profile</span>
+                  <span class="tool-badge-read">READ-ONLY</span>
+                </div>
+                <button class="btn-run-tool" onclick="runConsoleTool('get_profile', { detail_level: 'full' })">
+                  <span>▷</span> RUN
+                </button>
+              </div>
+              <p class="tool-card-desc">
+                Candidate overview for recruiters and hiring managers: current role, years of experience, target roles, headline metrics, and links.
+              </p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-top">
+                <div class="tool-card-title-group">
+                  <span class="tool-card-name">get_experience</span>
+                  <span class="tool-badge-read">READ-ONLY</span>
+                </div>
+                <button class="btn-run-tool" onclick="runConsoleTool('get_experience', {})">
+                  <span>▷</span> RUN
+                </button>
+              </div>
+              <p class="tool-card-desc">
+                Full work & research history, newest first: organization, role, dates, location, employment type, tech stack, and quantified achievements.
+              </p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-top">
+                <div class="tool-card-title-group">
+                  <span class="tool-card-name">list_projects</span>
+                  <span class="tool-badge-read">READ-ONLY</span>
+                </div>
+                <button class="btn-run-tool" onclick="runConsoleTool('list_projects', {})">
+                  <span>▷</span> RUN
+                </button>
+              </div>
+              <p class="tool-card-desc">
+                Projects beyond day jobs: DREAM framework (arXiv:2512.19016), CE-AKG belief graph, and MCP live portfolio with descriptions and links.
+              </p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-top">
+                <div class="tool-card-title-group">
+                  <span class="tool-card-name">get_skills</span>
+                  <span class="tool-badge-read">READ-ONLY</span>
+                </div>
+                <button class="btn-run-tool" onclick="runConsoleTool('get_skills', {})">
+                  <span>▷</span> RUN
+                </button>
+              </div>
+              <p class="tool-card-desc">
+                Every technical skill mapped to the jobs or projects where Fadil used it. A skill missing from this list has no evidence.
+              </p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-top">
+                <div class="tool-card-title-group">
+                  <span class="tool-card-name">evaluate_job_fit</span>
+                  <span class="tool-badge-read">READ-ONLY</span>
+                </div>
+                <button class="btn-run-tool" onclick="runConsoleTool('evaluate_job_fit', { job_description: 'Looking for a Senior AI Security Engineer with LangGraph and adversarial red teaming experience', target_role: 'Senior AI Security Engineer' })">
+                  <span>▷</span> RUN
+                </button>
+              </div>
+              <p class="tool-card-desc">
+                Call when the user shares a job description or asks whether Fadil fits a role. Returns an evidence-based, honest fit assessment.
+              </p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-top">
+                <div class="tool-card-title-group">
+                  <span class="tool-card-name">contact_fadil</span>
+                  <span class="tool-badge-action">ACTION</span>
+                </div>
+                <button class="btn-run-tool" onclick="runConsoleTool('contact_fadil', { sender_name: 'Lead Recruiter', sender_email: 'recruiter@company.com', role_or_subject: 'Staff AI Engineer Role', message: 'Hi Fadil, loved your work on DREAM. Let us talk!' })">
+                  <span>▷</span> RUN
+                </button>
+              </div>
+              <p class="tool-card-desc">
+                Records a direct message (role, project, or intro request) and notifies Fadil to reply.
+              </p>
+            </div>
+
+            <div class="tool-card">
+              <div class="tool-card-top">
+                <div class="tool-card-title-group">
+                  <span class="tool-card-name">job_fit</span>
+                  <span class="tool-badge-read">PROMPT</span>
+                </div>
+                <button class="btn-run-tool" onclick="runConsolePrompt('job_fit', { job_description: 'Staff AI Safety Engineer' })">
+                  <span>▷</span> RUN
+                </button>
+              </div>
+              <p class="tool-card-desc">
+                Map a job description's requirements to evidence from Fadil's experience and open-source projects.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Protocol Terminal (Right) -->
+          <div class="protocol-terminal">
+            <div class="terminal-topbar">
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+              </div>
+              <div class="terminal-title">POST /mcp (JSON-RPC 2.0 Stream)</div>
+              <div class="terminal-actions">
+                <button class="btn-terminal-action" onclick="copyConsoleLog()">Copy Log</button>
+                <button class="btn-terminal-action" onclick="clearConsoleLog()">Clear</button>
+              </div>
+            </div>
+
+            <div class="terminal-scroll-area" id="terminal-scroll-area">
+              <!-- Dynamically populated by app.js -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 03: CONNECT -->
+    <section class="section-wrapper" id="connect">
+      <div class="container">
+        <div class="section-label">03. CONNECT</div>
+        <h2 class="section-heading">Plug in your agent.</h2>
+        <p class="section-subheading">Pick your client. No auth, no install.</p>
+
+        <!-- Client Selector Tabs -->
+        <div class="client-tabs">
+          <button class="tab-btn client-tab-btn active" data-client="claude">Claude</button>
+          <button class="tab-btn client-tab-btn" data-client="cursor">Cursor & VS Code</button>
+          <button class="tab-btn client-tab-btn" data-client="chatgpt">ChatGPT</button>
+          <button class="tab-btn client-tab-btn" data-client="gemini">Gemini</button>
+          <button class="tab-btn client-tab-btn" data-client="grok">Grok</button>
+          <button class="tab-btn client-tab-btn" data-client="curl">cURL / CLI</button>
+        </div>
+
+        <!-- Connection Panel -->
+        <div class="connect-panel">
+          <!-- Step indicators -->
+          <div class="steps-list" id="connect-steps-container">
+            <!-- Dynamically populated -->
+          </div>
+
+          <!-- Snippet 1 -->
+          <div class="code-snippet-box">
+            <span class="snippet-label" id="snippet-1-label">Command</span>
+            <button class="btn-copy btn-snippet-copy" onclick="copySnippet('snippet-1-code')">
+              <span>📋</span> COPY
+            </button>
+            <pre class="snippet-content"><code id="snippet-1-code">Loading command...</code></pre>
+          </div>
+
+          <!-- Snippet 2 -->
+          <div class="code-snippet-box">
+            <span class="snippet-label" id="snippet-2-label">Configuration</span>
+            <button class="btn-copy btn-snippet-copy" onclick="copySnippet('snippet-2-code')">
+              <span>📋</span> COPY
+            </button>
+            <pre class="snippet-content"><code id="snippet-2-code">Loading configuration...</code></pre>
+          </div>
+
+          <!-- Suggested Prompt -->
+          <div class="suggested-prompt-box" id="connect-suggested-prompt">
+            Then ask: <strong>"What is Fadil working on right now?"</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 04: ABOUT & DIRECT OUTREACH -->
+    <section class="section-wrapper" id="about">
+      <div class="container">
+        <div class="section-label">04. PROFILE & IMPACT</div>
+        <h2 class="section-heading">Engineering & Research Rigor</h2>
+        <p class="section-subheading">Bridging theoretical dynamic adversarial modeling with production multi-agent systems.</p>
+
+        <div class="profile-overview-grid">
+          
+          <!-- About Card -->
+          <div class="about-card">
+            <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin-bottom: 12px;">
+              Fadil Anwar
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">
+              AI Security & Red Team Systems Engineer specializing in autonomous multi-agent systems, dynamic LLM safety evaluation, and production backend services. Author/architect of the DREAM framework (arXiv:2512.19016).
+            </p>
+
+            <div class="metrics-highlight-grid">
+              <div class="metric-box">
+                <div class="metric-val">5,000+</div>
+                <div class="metric-lbl">Adversarial interaction chains executed</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-val">120+</div>
+                <div class="metric-lbl">Unique multi-step high-risk flaws uncovered</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-val">42.6%</div>
+                <div class="metric-lbl">Failure pattern coverage (vs 14.2% static)</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-val">&lt; 100ms</div>
+                <div class="metric-lbl">FAISS vector search latency</div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
+              <a href="https://github.com/fadiliot" target="_blank" class="btn-copy" style="text-decoration: none;">
+                GitHub: @fadiliot
+              </a>
+              <a href="https://arxiv.org/html/2512.19016v2#S2.E3" target="_blank" class="btn-copy" style="text-decoration: none;">
+                arXiv:2512.19016
+              </a>
+              <a href="mailto:fadiliot@gmail.com" class="btn-copy" style="text-decoration: none;">
+                fadiliot@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="contact-card">
+            <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin-bottom: 12px;">
+              Direct Reach-out
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 20px;">
+              Have an open role, advisory opportunity, or technical question? Send a note directly to my inbox.
+            </p>
+
+            <form id="direct-contact-form">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Your Name</label>
+                <input type="text" class="form-input" id="contact-name" placeholder="Sarah Connor" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Your Email</label>
+                <input type="email" class="form-input" id="contact-email" placeholder="sarah@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Role or Purpose</label>
+                <input type="text" class="form-input" id="contact-subject" placeholder="Staff AI Engineer / Collaboration">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea class="form-textarea" id="contact-message" placeholder="Hi Fadil, I came across your DREAM research and would love to chat about..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">
+                Send Message →
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <strong>FADIL /mcp</strong> · Model Context Protocol (2024-11-05) Live Profile Server · Built with FastAPI & Vanilla CSS
+      </p>
+      <p style="margin-top: 6px; color: #475569;">
+        Compatible with Claude Desktop, Claude Code, Cursor, ChatGPT Actions, and Gemini Function Calling.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
