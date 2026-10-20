@@ -1131,3 +1131,16 @@ body::before {
   .steps-list { grid-template-columns: 1fr; }
   .hero-title { font-size: 2.8rem; }
 }
+
+/* Honest fit levels used by the live job-fit evaluator */
+.fit-partial {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent-amber);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.fit-gap {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--accent-red);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}

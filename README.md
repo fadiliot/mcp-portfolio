@@ -10,10 +10,12 @@ Instead of making recruiters and hiring managers read a static resume, your port
 
 - **Protocol Compliant:** Fully implements the **Model Context Protocol (MCP) 2024-11-05** specification over HTTP JSON-RPC 2.0 and Server-Sent Events (SSE).
 - **Interactive Scenarios (Use Cases):**
-  - **Recruiter:** Screens candidate fit against any job description with evidence mapping.
-  - **Hiring Manager:** Verifies empirical claims (5,000+ interactions, 120+ vulnerabilities, arXiv:2512.19016).
-  - **Founder / CTO:** Evaluates full-stack AI autonomy and high-velocity engineering.
-  - **Interviewer:** Generates tough, targeted technical questions on PO-MDP, LangGraph, and FAISS vector search.
+  - **Recruiter:** Runs the live `evaluate_job_fit` tool against an associate-level job description. The table is rendered from the server response, not hardcoded.
+  - **Hiring Manager:** Separates public, verifiable claims (DREAM repo and arXiv paper) from self-reported internship results.
+  - **Founder / CTO:** Shows what an associate-level builder can ship end to end, and what still needs mentorship.
+  - **Interviewer:** Entry-level questions drawn from his real projects (DREAM, PharmaGene-RAG, Invoice_AI).
+- **Honest job-fit evaluator:** `evaluate_job_fit` checks seniority and years of experience first. Lead/senior roles or 3+ years required are reported as "Not a fit"; each requirement is then mapped to evidence labelled Strong, Solid, Project-level, Foundational or Limited, with gaps listed.
+- **Single source of truth:** Experience level, projects, skills and metrics all come from `data/profile.json` (including the `seniority` block).
 - **Live Protocol Console:**
   - Real-time JSON-RPC terminal inspector. Run tools (`get_profile`, `get_experience`, `list_projects`, `get_skills`, `evaluate_job_fit`, `contact_fadil`) and inspect request/response frames with millisecond latency metrics.
 - **Plug In Your Agent:**

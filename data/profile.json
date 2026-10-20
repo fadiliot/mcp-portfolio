@@ -16,6 +16,22 @@
       "email": "mailto:fadilanwar727@gmail.com"
     }
   },
+  "seniority": {
+    "level": "Entry-level / Associate",
+    "ai_experience_months": 6,
+    "ai_experience_summary": "About 6 months of hands-on applied AI internship experience (Efforts IT Solutions Ltd, Dexian India), plus an earlier data science internship at Emirates and academic/research projects.",
+    "seeking": [
+      "Full-time associate roles",
+      "Graduate / entry-level AI, ML and backend engineering roles"
+    ],
+    "not_seeking": [
+      "Lead",
+      "Principal",
+      "Staff",
+      "Senior",
+      "Manager"
+    ]
+  },
   "headline_metrics": [
     {
       "label": "Automated Adversarial Tests",
@@ -537,7 +553,7 @@
       "Hybrid"
     ],
     "employment_types": [
-      "Full-Time",
+      "Full-Time (Associate / Entry-level)",
       "Graduate Roles",
       "Internship"
     ],

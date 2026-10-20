@@ -7,140 +7,148 @@ const API_BASE = window.location.origin;
 const MCP_ENDPOINT = `${API_BASE}/mcp`;
 
 // Scenario Presets for "Section 01: USE CASES"
+// Every claim below is taken from data/profile.json. Fadil is entry-level (about 6 months of AI
+// internship experience) and targets associate / graduate / full-time entry-level roles only.
+const RECRUITER_JD =
+  "Associate AI Engineer (0-2 years). Python, LLM applications and RAG, LangGraph or agent frameworks, " +
+  "REST APIs with FastAPI, Docker, SQL. Kubernetes is a plus.";
+
 const SCENARIOS = {
   recruiter: {
     role: "RECRUITER",
-    desc: "Screen against an AI / Security job description",
+    desc: "Screen against an associate-level job description",
     promptBadge: "PROMPT · JOB_FIT",
-    promptText: "Candidate screening: Lead AI Security Engineer, 4+ years. Must have deep experience in autonomous agentic workflows (LangGraph), adversarial safety evaluations, and production Python. Is Fadil Anwar a fit?",
+    promptText: "Associate AI Engineer (0-2 years). Python, LLM applications and RAG, LangGraph or agent frameworks, REST APIs with FastAPI, Docker, SQL. Kubernetes is a plus. Is Fadil Anwar a fit?",
     toolCalls: [
-      { tool: "get_profile", params: { detail_level: "full" }, label: "Candidate overview, roles, metrics" },
-      { tool: "get_experience", params: { organization: "red team" }, label: "Autonomous Red Team & research tenure" },
-      { tool: "list_projects", params: { project_id: "dream-redteam" }, label: "DREAM framework & arXiv publication" }
+      { tool: "get_profile", params: { detail_level: "summary" }, label: "Seniority, location, headline metrics" },
+      { tool: "get_experience", params: {}, label: "Internship history" },
+      { tool: "evaluate_job_fit", params: { job_description: RECRUITER_JD, target_role: "Associate AI Engineer" }, label: "Seniority check + requirement mapping" }
     ],
-    table: [
-      {
-        req: "Multi-Agent & Agentic Workflows",
-        evidence: "Architected DREAM multi-agent decision cycle (Planner, Attacker, Evaluator, Target) using LangGraph StateGraph.",
-        fit: "Strong",
-        fitClass: "fit-strong"
-      },
-      {
-        req: "Adversarial Red Teaming & Safety",
-        evidence: "Executed 5,000+ interactions discovering 120+ unique high-risk vulnerabilities across 12 frontier models (arXiv:2512.19016).",
-        fit: "Strong",
-        fitClass: "fit-strong"
-      },
-      {
-        req: "Production Python & High-Scale Systems",
-        evidence: "Engineered FastAPI backend with FAISS vector search, async event loops, Pydantic V2, and sub-100ms response latencies.",
-        fit: "Strong",
-        fitClass: "fit-strong"
-      },
-      {
-        req: "Deep Learning (PyTorch, Embeddings)",
-        evidence: "Implemented 128-d PyTorch neural feature projection & FAISS IndexFlatIP inner-product search for heuristic attack selection.",
-        fit: "Specialized",
-        fitClass: "fit-verified"
-      }
-    ],
-    synthesis: "Fadil demonstrates deep empirical and architectural alignment. His work directly bridges theoretical PO-MDP policy search with high-performance production agent systems."
+    // Table and verdict are rendered from the live evaluate_job_fit response
+    liveEvaluate: { job_description: RECRUITER_JD, target_role: "Associate AI Engineer" }
   },
 
   hiring_manager: {
     role: "HIRING MANAGER",
-    desc: "Verify production & research claims",
+    desc: "Check which claims are evidence-backed",
     promptBadge: "PROMPT · AUDIT_CLAIMS",
-    promptText: "Audit verified claims: Verify the 5,000+ adversarial interactions, 120+ high-risk vulnerabilities, and mathematical basis of the PO-MDP formulation reported in DREAM (arXiv:2512.19016).",
+    promptText: "Audit Fadil's headline claims: 5,000+ test executions, 120+ failure categories, ~83% GPU reduction, 10,000+ invoices/day. What is publicly verifiable and what is self-reported?",
     toolCalls: [
-      { tool: "list_projects", params: { project_id: "dream-redteam" }, label: "Audit DREAM benchmarks & arXiv:2512.19016" },
-      { tool: "get_skills", params: { category: "AI & Agentic Systems" }, label: "PO-MDP & C-GPS heuristic implementation" }
+      { tool: "list_projects", params: { project_id: "dream-redteam" }, label: "DREAM red-team harness" },
+      { tool: "list_projects", params: { project_id: "invoice-ai" }, label: "Invoice_AI pipeline" },
+      { tool: "get_experience", params: {}, label: "Where each result was produced" }
     ],
     table: [
       {
-        req: "Empirical Attack Volume",
-        evidence: "5,240+ multi-step interaction chains evaluated across 12 models (Sonnet 3.5, GPT-4o, Grok-4, Gemini-2.5, Llama-3.1).",
-        fit: "Verified",
+        req: "5,000+ test executions → 120+ failure categories",
+        evidence: "DREAM red-team harness. Public GitHub repo and arXiv:2512.19016. A research project, not a production deployment.",
+        fit: "Public repo",
         fitClass: "fit-verified"
       },
       {
-        req: "Vulnerability Escalation Discovery",
-        evidence: "Mathematically modeled 'Domino Effect' showing severity increases 4.8x from Step 1 (1.48) to Step 5 (14.38).",
-        fit: "Verified",
-        fitClass: "fit-verified"
+        req: "~83% lower GPU overhead (AGRIIQ)",
+        evidence: "Trajectory subsampling in the YOLO11 + ByteTrack pipeline built during the Dexian India internship. No public repo; self-reported.",
+        fit: "Self-reported",
+        fitClass: "fit-partial"
       },
       {
-        req: "Failure Mode Coverage",
-        evidence: "Uncovered 120+ unique failure modes achieving 42.6% coverage vs 14.2% for manual static testing.",
-        fit: "Verified",
-        fitClass: "fit-verified"
+        req: "~10,000 invoices/day (Invoice_AI)",
+        evidence: "Stated as the supported scale of the Redis/RQ async architecture built during the Efforts IT internship. No public benchmark.",
+        fit: "Self-reported",
+        fitClass: "fit-partial"
+      },
+      {
+        req: "~70% accuracy gain, ~60% fewer unsupported claims (PharmaGene-RAG)",
+        evidence: "Reported versus baseline models in a co-authored, defended research project. No public paper or repo linked in the profile.",
+        fit: "Self-reported",
+        fitClass: "fit-partial"
+      },
+      {
+        req: "Seniority",
+        evidence: "About 6 months of AI internship experience (Efforts IT Solutions, Dexian India) plus an earlier Emirates data-science internship. All roles so far are internships.",
+        fit: "Entry-level",
+        fitClass: "fit-partial"
       }
     ],
-    synthesis: "Claims are backed by published mathematical formulations (arXiv:2512.19016 §2.3) and active open-source implementation with 10/10 automated tests passing."
+    synthesis: "Strongest evidence is the public DREAM repo and arXiv paper. Industry numbers come from internships and are self-reported, so ask for a walkthrough or references. Treat him as an entry-level / associate candidate."
   },
 
   founder: {
     role: "FOUNDER / CTO",
-    desc: "Find an agentic builder and reach out",
+    desc: "Find an associate-level builder and reach out",
     promptBadge: "PROMPT · FOUNDER_OUTREACH",
-    promptText: "We need an engineer who can independently own agent architecture, move fast, and build mission-critical autonomous systems. What can Fadil build?",
+    promptText: "We are an early-stage startup hiring an associate AI engineer. Can Fadil build end-to-end AI features with us, and how do I reach him?",
     toolCalls: [
-      { tool: "get_profile", params: { detail_level: "summary" }, label: "Candidate capabilities & availability" },
-      { tool: "get_experience", params: {}, label: "Full stack engineering & autonomy" }
+      { tool: "get_profile", params: { detail_level: "summary" }, label: "Seniority, availability, location" },
+      { tool: "list_projects", params: {}, label: "What he has built" },
+      { tool: "get_skills", params: { category: "Backend" }, label: "Backend and systems skills with evidence" }
     ],
     table: [
       {
-        req: "End-to-End Ownership",
-        evidence: "Architected complete multi-agent orchestrator, vector search engine, FastAPI REST API, and HTML5 Canvas physics UI.",
-        fit: "Strong",
-        fitClass: "fit-strong"
+        req: "Ships AI features end-to-end",
+        evidence: "Invoice_AI and the Sales Co-worker platform: FastAPI + React + PostgreSQL + Redis, containerized with Docker (internship projects).",
+        fit: "Solid",
+        fitClass: "fit-verified"
       },
       {
-        req: "High-Velocity Prototyping",
-        evidence: "Built production-grade, stateful AI security framework from research paper formulation to live testbed.",
-        fit: "Strong",
-        fitClass: "fit-strong"
+        req: "LLM / RAG product work",
+        evidence: "PharmaGene-RAG: hybrid knowledge-graph + vector search with citation enforcement and a local inference pipeline under 3.5s.",
+        fit: "Solid",
+        fitClass: "fit-verified"
       },
       {
-        req: "Founding Engineer Mindset",
-        evidence: "Comfortable navigating ambiguous agentic frontiers, designing clean protocols (MCP, REST), and optimizing sub-100ms systems.",
-        fit: "Strong",
-        fitClass: "fit-strong"
+        req: "Computer vision and forecasting",
+        evidence: "AGRIIQ real-time vehicle tracking; drone tree-crown segmentation; LightGBM four-week commodity price forecasts with confidence intervals.",
+        fit: "Solid",
+        fitClass: "fit-verified"
+      },
+      {
+        req: "Owns architecture independently",
+        evidence: "All experience so far is internship work. Best as an associate on a team with mentorship rather than as the sole technical owner.",
+        fit: "Entry-level",
+        fitClass: "fit-partial"
       }
     ],
-    synthesis: "Fadil operates as a full-stack AI builder who seamlessly connects low-level neural tensors and graph dynamics with high-level user interfaces and APIs."
+    synthesis: "A capable associate-level builder across the stack. Expect to onboard and mentor rather than hand over architecture ownership. Use the contact_fadil tool to reach him about full-time associate or graduate roles."
   },
 
   interviewer: {
     role: "INTERVIEWER",
-    desc: "Brief me before the technical interview",
+    desc: "Brief me before the associate-level interview",
     promptBadge: "PROMPT · TECHNICAL_INTERVIEW_BRIEF",
-    promptText: "I am interviewing Fadil for a Senior AI / Security Engineer role in 15 minutes. Give me the sharpest technical questions based on his real systems.",
+    promptText: "I am interviewing Fadil for an associate AI engineer role. Give me sharp questions based on his real projects.",
     toolCalls: [
-      { tool: "list_projects", params: { project_id: "dream-redteam" }, label: "Architecture & algorithmic specifics" },
-      { tool: "get_skills", params: { category: "Deep Learning & Search" }, label: "PyTorch & FAISS performance design" }
+      { tool: "list_projects", params: { project_id: "pharmagene-rag" }, label: "RAG grounding project" },
+      { tool: "list_projects", params: { project_id: "dream-redteam" }, label: "Multi-agent evaluation project" },
+      { tool: "get_skills", params: { category: "AI & Agentic Systems" }, label: "Agent and LLM evaluation skills" }
     ],
     table: [
       {
-        req: "Topic 1: Static vs Dynamic Safety",
-        evidence: "Ask: 'Why do single-turn jailbreak benchmarks fail to capture multi-agent vulnerabilities, and how does PO-MDP belief tracking solve this?'",
-        fit: "Core Topic",
+        req: "DREAM: evaluation harness",
+        evidence: "Ask: 'How did you group 5,000+ test executions into 120+ failure categories without human labels, and how would you check the clusters are meaningful?'",
+        fit: "Core topic",
         fitClass: "fit-verified"
       },
       {
-        req: "Topic 2: C-GPS Value Heuristic",
-        evidence: "Ask: 'How does your heuristic value function balance entity usage with strategic progression when traversing the Atom Attack Library?'",
-        fit: "Core Topic",
+        req: "PharmaGene-RAG: grounding",
+        evidence: "Ask: 'How does citation enforcement reduce unsupported claims, and how did you measure the ~60% reduction against baseline models?'",
+        fit: "Core topic",
         fitClass: "fit-verified"
       },
       {
-        req: "Topic 3: Real-Time Vector Search",
-        evidence: "Ask: 'How did you tune FAISS IndexFlatIP inner-product search and PyTorch embeddings to maintain sub-100ms cycle times?'",
-        fit: "Core Topic",
+        req: "Invoice_AI: async pipeline",
+        evidence: "Ask: 'Why put Redis/RQ workers between ingestion and OCR, and what happens when a job fails or confidence is below 0.85?'",
+        fit: "Core topic",
         fitClass: "fit-verified"
+      },
+      {
+        req: "Calibration",
+        evidence: "Ask: 'Which parts were your own design and which were guided by a mentor?' All roles so far are internships.",
+        fit: "Calibrate",
+        fitClass: "fit-partial"
       }
     ],
-    synthesis: "Focus the conversation on how he prevents infinite loops in cyclic LangGraph workflows and the practical challenges of evaluating non-deterministic LLMs."
+    synthesis: "Calibrate for an entry-level candidate: probe design decisions, trade-offs and what he would do differently, not large-scale production ownership."
   }
 };
 
@@ -293,7 +301,8 @@ async function loadDynamicProfile() {
     const heroTagline = document.getElementById("hero-tagline");
     if (heroTagline) {
       const title = data.personal.title ? data.personal.title.toUpperCase() : 'APPLIED AI ENGINEER';
-      heroTagline.textContent = `${data.personal.name.toUpperCase()} · ${title}`;
+      const level = data.seniority && data.seniority.level ? ` · ${data.seniority.level.split(' / ')[0].toUpperCase()}` : '';
+      heroTagline.textContent = `${data.personal.name.toUpperCase()} · ${title}${level}`;
     }
 
     const heroDesc = document.getElementById("hero-description");
@@ -307,10 +316,10 @@ async function loadDynamicProfile() {
       const previewObj = {
         name: data.personal.name,
         role: data.personal.title,
+        seniority: data.seniority ? data.seniority.level : undefined,
+        ai_experience: data.seniority ? data.seniority.ai_experience_summary : undefined,
         location: data.personal.location,
-        status: data.personal.status,
-        headline_metrics: (data.headline_metrics || []).slice(0, 3).map(m => `${m.value} ${m.label}`),
-        current_focus: data.current_focus ? (data.current_focus.role || data.current_focus.system) : undefined
+        status: data.personal.status
       };
       heroJsonCode.innerHTML = renderHighlightedJson(previewObj);
     }
@@ -463,8 +472,20 @@ function initScenarioPlayer(scenarioKey) {
     });
   }
 
-  // Render Evidence Matrix Table
+  // Render Evidence Matrix Table + synthesis
   const tbody = document.getElementById("scenario-evidence-tbody");
+  const noteEl = document.getElementById("scenario-synthesis-note");
+
+  if (data.liveEvaluate) {
+    // Table comes straight from the live evaluate_job_fit tool (validated against profile.json)
+    if (tbody) {
+      tbody.innerHTML = `<tr><td colspan="3" style="color: var(--text-dim);">Running evaluate_job_fit on the live server…</td></tr>`;
+    }
+    if (noteEl) noteEl.textContent = "";
+    renderLiveEvaluation(data.liveEvaluate, scenarioKey);
+    return;
+  }
+
   if (tbody) {
     tbody.innerHTML = data.table.map(row => `
       <tr>
@@ -475,10 +496,61 @@ function initScenarioPlayer(scenarioKey) {
     `).join("");
   }
 
-  // Render Agent Synthesis Note
-  const noteEl = document.getElementById("scenario-synthesis-note");
   if (noteEl) {
     noteEl.textContent = data.synthesis;
+  }
+}
+
+// Map the evaluator's honest fit labels to badge styles
+function fitClassFor(label) {
+  switch (label) {
+    case "Strong":
+    case "Matches":
+      return "fit-strong";
+    case "Solid":
+      return "fit-verified";
+    case "Project-level":
+    case "Stretch":
+      return "fit-partial";
+    default: // Foundational, Limited, Gap
+      return "fit-gap";
+  }
+}
+
+async function renderLiveEvaluation(args, scenarioKey) {
+  const tbody = document.getElementById("scenario-evidence-tbody");
+  const noteEl = document.getElementById("scenario-synthesis-note");
+  try {
+    const res = await fetch(MCP_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        id: Date.now(),
+        method: "tools/call",
+        params: { name: "evaluate_job_fit", arguments: args }
+      })
+    });
+    const json = await res.json();
+    if (scenarioKey !== currentScenario) return; // user switched scenario meanwhile
+    const result = JSON.parse(json.result.content[0].text);
+
+    if (tbody) {
+      tbody.innerHTML = result.rubric_breakdown.map(row => `
+        <tr>
+          <td style="font-weight: 600; color: #fff;">${escapeHtml(row.requirement)}</td>
+          <td style="color: var(--text-muted);">${escapeHtml(row.evidence)}</td>
+          <td><span class="fit-tag ${fitClassFor(row.fit)}">${escapeHtml(row.fit)}</span></td>
+        </tr>
+      `).join("");
+    }
+    if (noteEl) {
+      noteEl.textContent = `${result.overall_fit_score} · ${result.verdict} ${result.recommended_next_step}`;
+    }
+  } catch (err) {
+    if (tbody) {
+      tbody.innerHTML = `<tr><td colspan="3" style="color: var(--text-dim);">Could not reach the MCP server: ${escapeHtml(err.message)}</td></tr>`;
+    }
   }
 }
 

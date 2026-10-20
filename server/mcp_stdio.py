@@ -11,6 +11,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
+from server.portfolio_core import server_instructions
 from server.mcp_server import (
     load_profile_data,
     execute_tool,
@@ -62,7 +63,7 @@ def handle_request(req: dict) -> dict:
                     "resources": {"subscribe": False, "listChanged": False}
                 },
                 "serverInfo": SERVER_INFO,
-                "instructions": f"This is the live Model Context Protocol (MCP) portfolio server for {name}, {title}. Use available tools to screen qualifications, inspect work history, evaluate job fit, or initiate contact."
+                "instructions": server_instructions()
             }
         }
 
