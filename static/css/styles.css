@@ -43,6 +43,9 @@ html {
   background-color: var(--bg-dark);
   color: var(--text-main);
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
@@ -52,6 +55,8 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Background Grid Overlay */
@@ -1121,15 +1126,445 @@ body::before {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints
+   Responsive Breakpoints & Mobile Optimization
    ========================================================================== */
+
+/* Tablet & Smaller Desktops */
 @media (max-width: 960px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .use-cases-grid { grid-template-columns: 1fr; }
-  .console-grid { grid-template-columns: 1fr; }
-  .profile-overview-grid { grid-template-columns: 1fr; }
-  .steps-list { grid-template-columns: 1fr; }
-  .hero-title { font-size: 2.8rem; }
+  .hero-grid { 
+    grid-template-columns: 1fr; 
+    gap: 40px;
+  }
+  .use-cases-grid { 
+    grid-template-columns: 1fr; 
+    gap: 28px;
+  }
+  .console-grid { 
+    grid-template-columns: 1fr; 
+    gap: 28px;
+  }
+  .profile-overview-grid { 
+    grid-template-columns: 1fr; 
+    gap: 28px;
+  }
+  .steps-list { 
+    grid-template-columns: 1fr; 
+  }
+  .hero-title { 
+    font-size: 2.75rem; 
+  }
+}
+
+/* Mobile & Small Tablets */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Prevent grid items and flex items from expanding width */
+  .hero-grid > *,
+  .use-cases-grid > *,
+  .console-grid > *,
+  .profile-overview-grid > *,
+  .steps-list > *,
+  .hero-content,
+  .hero-terminal-card,
+  .agent-workspace,
+  .protocol-terminal,
+  .about-card,
+  .contact-card,
+  .connect-panel {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .container {
+    padding: 0 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .section-wrapper {
+    padding: 55px 0;
+  }
+
+  .section-heading {
+    font-size: 2.05rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+
+  .section-subheading {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  /* Navbar: Keep brand on left and status badge on right, hide desktop nav links */
+  .navbar {
+    padding: 14px 0;
+  }
+
+  .navbar .container {
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .status-badge {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 40px 0 55px;
+  }
+
+  .hero-tagline {
+    font-size: 0.74rem;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+    letter-spacing: -0.8px;
+    margin-bottom: 18px;
+    line-height: 1.15;
+    word-break: break-word;
+  }
+
+  .hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  /* Endpoint bar: Stack nicely so URL & copy button never overflow */
+  .endpoint-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 14px;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  .endpoint-badge {
+    margin-right: 0;
+  }
+
+  .endpoint-url {
+    order: 3;
+    width: 100%;
+    flex: none;
+    font-size: 0.78rem;
+    word-break: break-all;
+    white-space: normal;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+  }
+
+  .btn-copy {
+    margin-left: auto;
+  }
+
+  /* Hero action buttons */
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Hero Terminal Card */
+  .hero-terminal-card {
+    padding: 16px;
+    border-radius: 14px;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .hero-json-preview {
+    font-size: 0.73rem;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre;
+    padding-bottom: 6px;
+  }
+
+  /* Use cases / Workspace */
+  .agent-workspace {
+    border-radius: 14px;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .workspace-topbar {
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .workspace-body {
+    padding: 14px;
+    box-sizing: border-box;
+  }
+
+  .prompt-bubble {
+    padding: 12px 14px;
+    margin-bottom: 18px;
+  }
+
+  .prompt-content {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .tool-call-header {
+    padding: 10px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tool-call-name {
+    font-size: 0.78rem;
+  }
+
+  .tool-call-meta {
+    font-size: 0.7rem;
+    gap: 8px;
+  }
+
+  .tool-call-body {
+    padding: 12px;
+    font-size: 0.73rem;
+    max-height: 220px;
+  }
+
+  /* Evidence Table in mobile */
+  .agent-matrix-wrapper {
+    padding: 12px;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  .evidence-table {
+    min-width: 320px;
+    font-size: 0.76rem;
+  }
+
+  .evidence-table th, .evidence-table td {
+    padding: 8px 6px;
+  }
+
+  .agent-synthesis-note {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding-left: 10px;
+  }
+
+  /* Live Console */
+  .tool-card {
+    padding: 14px 16px;
+    box-sizing: border-box;
+  }
+
+  .tool-card-top {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tool-card-name {
+    font-size: 0.84rem;
+  }
+
+  .btn-run-tool {
+    margin-left: auto;
+  }
+
+  .protocol-terminal {
+    height: 440px;
+    border-radius: 14px;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .terminal-topbar {
+    padding: 10px 14px;
+  }
+
+  .terminal-scroll-area {
+    padding: 12px;
+    font-size: 0.73rem;
+  }
+
+  .protocol-line {
+    font-size: 0.72rem;
+    word-break: break-all;
+  }
+
+  .line-json-block {
+    font-size: 0.7rem;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Connect Section */
+  .connect-panel {
+    padding: 18px 16px;
+    border-radius: 14px;
+    box-sizing: border-box;
+  }
+
+  .client-tabs {
+    gap: 8px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 6px;
+  }
+
+  .tab-btn {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+
+  .step-item {
+    font-size: 0.82rem;
+  }
+
+  .code-snippet-box {
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .btn-snippet-copy {
+    position: static;
+    float: right;
+    margin-bottom: 8px;
+  }
+
+  .snippet-content {
+    font-size: 0.75rem;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: pre;
+    clear: both;
+  }
+
+  /* Profile & Contact Section */
+  .about-card, .contact-card {
+    padding: 20px 16px;
+    border-radius: 14px;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .metrics-highlight-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 18px 0;
+  }
+
+  .metric-box {
+    padding: 12px 10px;
+    box-sizing: border-box;
+  }
+
+  .metric-val {
+    font-size: 1.35rem;
+    word-break: break-word;
+  }
+
+  .metric-lbl {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 30px 16px;
+    font-size: 0.74rem;
+    line-height: 1.6;
+    word-break: break-word;
+  }
+
+  /* Toast Notification */
+  .toast {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 0.76rem;
+    padding: 10px 14px;
+    justify-content: center;
+  }
+}
+
+/* Small mobile devices (e.g. iPhone SE, 320px - 400px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.95rem;
+  }
+
+  .section-heading {
+    font-size: 1.75rem;
+  }
+
+  .metrics-highlight-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .metric-box {
+    padding: 12px 14px;
+  }
+
+  .metric-val {
+    font-size: 1.5rem;
+  }
 }
 
 /* Honest fit levels used by the live job-fit evaluator */
