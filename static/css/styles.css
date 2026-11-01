@@ -185,7 +185,7 @@ body::before {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 48px;
   align-items: center;
 }
@@ -202,7 +202,8 @@ body::before {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 3.75rem;
+  font-size: clamp(2.1rem, 3.8vw + 0.5rem, 3.75rem);
+  overflow-wrap: break-word;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
@@ -1130,7 +1131,7 @@ body::before {
    ========================================================================== */
 
 /* Tablet & Smaller Desktops */
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
   .hero-grid { 
     grid-template-columns: 1fr; 
     gap: 40px;
@@ -1156,7 +1157,7 @@ body::before {
 }
 
 /* Mobile & Small Tablets */
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   html, body {
     overflow-x: hidden !important;
     width: 100% !important;
